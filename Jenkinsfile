@@ -1,15 +1,11 @@
 pipeline {
-    agent { docker 'narenas/python-jenkins:0.1' }
+    agent { master }
     stages {
-        stage('Setting up environment') {
+        stage('Build Container') {
             steps {
-                sh '''
-                apk add --no-cache postgresql-libs && \
-                apk add --no-cache --virtual .build-deps gcc musl-dev postgresql-dev
-                pip install -r project/requirements.txt
-                cd project
-                python run.py
-                '''
+                script {
+                    def customImage = docker.build ("python-api:${env.BUILD_ID}")
+                }
             }
         }
     }
