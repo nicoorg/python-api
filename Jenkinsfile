@@ -1,9 +1,6 @@
 pipeline {
     agent {
-        docker {
-            label 'python'
-        }
-
+        label 'python' 
     }
     stages {
         stage ("Test run container") {
