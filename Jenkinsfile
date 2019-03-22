@@ -1,9 +1,9 @@
 pipeline {
-    agent { docker { image 'ruby' } }
+    agent { docker 'narenas/python-jenkins:0.1' }
     stages {
         stage('build') {
             steps {
-                sh 'ruby --version'
+                sh 'python -version'
             }
         }
     }
