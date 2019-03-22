@@ -1,15 +1,10 @@
 pipeline {
-    agent {
-        docker {
-            image 'narenas/python-jenkins:0.1'
-        }  
-    }
+    agent { docker { image 'ruby' } }
     stages {
-        stage ("Test run container") {
+        stage('build') {
             steps {
-                echo "Hola Mundo"
+                sh 'ruby --version'
             }
         }
     }
-
 }
