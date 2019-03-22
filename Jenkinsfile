@@ -1,9 +1,13 @@
 pipeline {
     agent { docker 'narenas/python-jenkins:0.1' }
     stages {
-        stage('build') {
+        stage('Setting up environment') {
             steps {
-                sh 'python -V'
+                sh '''
+                pip install -r project/requirements.txt
+                cd project
+                python run.py
+                '''
             }
         }
     }
