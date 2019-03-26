@@ -8,5 +8,12 @@ pipeline {
                 }
             }
         }
+        stage ('Setup Container') {
+            steps {
+                script {
+                    docker.image("python-api:${env.BUILD_ID}").withRun()
+                }
+            }
+        }
     }
 }
