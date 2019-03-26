@@ -16,6 +16,7 @@ pipeline {
             }
             steps {
                     echo "Hola mundo"
+                    sh 'curl -v http://localhost:5000/api'
             }
         }
     }
