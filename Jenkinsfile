@@ -15,7 +15,7 @@ pipeline {
                 }
             }
             steps {
-                    sh '/usr/local/bin/python /opt/my-api/run.py'
+                    sh '/usr/local/bin/python /opt/my-api/run.py &'
                     sh 'curl -v http://localhost:5000/api'
             }
         }
