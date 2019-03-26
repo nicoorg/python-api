@@ -8,4 +8,4 @@ RUN apk add --no-cache postgresql-libs && \
     apk add --no-cache --virtual .build-deps gcc musl-dev postgresql-dev && \
     pip install -r /opt/my-api/requirements.txt
 
-ENTRYPOINT ["/usr/local/bin/python" , "/opt/my-api/run.py"]
+CMD ["/usr/local/bin/python" , "/opt/my-api/run.py"]
