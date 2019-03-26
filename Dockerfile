@@ -9,4 +9,4 @@ RUN apk add --no-cache postgresql-libs && \
     find /opt/my-api/ && \
     pip install -r /opt/my-api/requirements.txt
 
-CMD "/usr/local/bin/python /opt/my-api/run.py"
+ENTRYPOINT ["/usr/local/bin/python" , "/opt/my-api/run.py"]
