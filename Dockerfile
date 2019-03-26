@@ -10,4 +10,3 @@ RUN apk add --no-cache postgresql-libs && \
     pip install -r /opt/my-api/requirements.txt
 
 CMD "python /opt/my-api/run.py"
-
