@@ -20,7 +20,9 @@ pipeline {
             steps {
                     sh "/usr/local/bin/python /opt/my-api/run.py &"
                     sleep(10)
-                    sh 'curl -v http://localhost:5000/api'
+                    script {
+                        httpRequest responseHandle: 'NONE', url: 'http://localhost:5000/api/Hello'
+                    }
             }
         }
     }
