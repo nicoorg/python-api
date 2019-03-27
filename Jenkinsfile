@@ -1,7 +1,7 @@
 pipeline {
     agent { label 'master' }
     options {
-
+        buildDiscarder(logRotator(numToKeepStr: '10'))
     }
     stages {
         stage('Build Container') {
