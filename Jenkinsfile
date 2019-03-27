@@ -1,5 +1,8 @@
 pipeline {
     agent { label 'master' }
+    options {
+
+    }
     stages {
         stage('Build Container') {
             steps {
@@ -15,8 +18,8 @@ pipeline {
                 }
             }
             steps {
-                    sh (script: "")
                     sh "/usr/local/bin/python /opt/my-api/run.py &"
+                    sleep(10)
                     sh 'curl -v http://localhost:5000/api'
             }
         }
